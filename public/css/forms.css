@@ -1,0 +1,46 @@
+form {
+    margin: 20px 80pt;
+    padding: 0 10pt;
+}
+
+.ff {
+    margin-bottom: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #f0f5fd;
+}
+
+input.ff {
+    width: 240px;
+    padding: 3px 5pt;
+}
+
+select.ff {
+    padding: 3px 2pt;
+}
+
+div.fmctrls {
+    margin-top: 15px;
+    width: 250px;
+    text-align: right;
+}
+
+.fmctrls button {
+    margin-left: 2pt;
+    padding: 2px 16pt;
+    border-radius: 5px;
+    color: #40555d;
+    border-top: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #aaaaaa;
+    background-color: #e0e0e0;
+    font: 400 11pt 'Fira Sans Extra Condensed', sans-serif;
+}
+
+button.cancel {
+    border-bottom: 1px solid #cc0000;
+}
+
+button.do {
+    border-bottom: 1px solid #009900;
+}

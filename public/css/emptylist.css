@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    min-width: 980px;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+body {
+    width: 100%;
+    display: table;
+}
+
+header {
+    position: absolute;
+    min-width: 980px;
+    top: 0;
+    left: 0;
+    padding: 25px 0;
+    width: 100%;
+    display: block;
+    white-space: nowrap;
+}
+
+div.listpad {
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    color: #bcc5cd;
+    font: 400 24pt 'Fira Sans Extra Condensed', sans-serif;
+}
+
+div.title {
+    float: left;
+    margin: 0 40pt 0 80pt;
+    color: #acb5bd;
+    font: 400 36pt /*'El Messiri',*/ 'Fira Sans Extra Condensed', sans-serif /*'Cormorant Infant', serif*/;
+}
+
+nav {
+    float: right;
+    margin-right: 80pt;
+}
+
+div.addplacectl {
+    float: right;
+    margin: 16px 80pt 0 0;
+    color: #ffffff;
+    background-color: #8c959d/*#6c757d*/;
+    border-radius: 121px;
+    font: 400 13pt 'Fira Sans Extra Condensed', sans-serif;
+    cursor: pointer;
+}
+
+div.comeback {
+    float: right;
+    margin: 16px 10pt 0 0;
+    padding: 7px 10pt;
+    color: #ffffff;
+    background-color: #8c959d/*#6c757d*/;
+    border-radius: 121px;
+    font: 400 13pt 'Fira Sans Extra Condensed', sans-serif;
+    cursor: pointer;
+}
+
+.plus {
+    width: 26px;
+    padding: 5px;
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+    background-color: #4c555d;
+    font-size: 15pt;
+    border-radius: 121px;
+    opacity: 0.8;
+}
+
+.plabel {
+    padding: 0 12pt 0 4pt;
+    display: inline-block;
+}
+
+a.latent {
+    text-decoration: none;
+    color: #6c757d;
+    border-bottom: 1px solid #8c959d;
+    display: inline-block;
+}
+
+div.active {
+    background-color: #e8e8e8;
+}
+
+.active span {
+    color: #6c757d;
+    border-bottom: 1px solid #e8e8e8;
+    display: inline-block;
+}
+
+div.mitem {
+    margin: 2px 0;
+    padding: 3px 20pt;
+    font: 400 11pt 'Fira Sans Extra Condensed', sans-serif;
+}
