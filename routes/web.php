@@ -40,4 +40,6 @@ Route::prefix('places')->group(function () {
 
 Route::get('/photos/add', 'PlaceController@addAnyPhoto')->name('photo.get_wildcard_form')->middleware(['menu']);
 
+Route::get('/rating', 'RatingController@index')->name('rating.show')->middleware(['rating']);
+
 Route::redirect('/', 'places');

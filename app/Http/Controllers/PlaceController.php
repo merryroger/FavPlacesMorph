@@ -45,7 +45,6 @@ class PlaceController extends Controller
     public function showPlace($id)
     {
         $place = Place::placeById($id)->first();
-        //dump($place->ratings);
         $listset = $place->pictures->sortByDesc(function ($query) {
             return $query->created_at;
         });
@@ -83,10 +82,10 @@ class PlaceController extends Controller
         return redirect("places/{$place_id}/");
     }
 
-    public function likePlace($id, $mark) {
+    public function likePlace($id, $mark)
+    {
         $place = Place::find($id);
         $place->ratings()->save(new Rating(['mark' => $mark == 1]));
-
 
         return redirect()->route('place.show', [$id]);
     }

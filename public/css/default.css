@@ -89,8 +89,13 @@ div.active {
     display: inline-block;
 }
 
-div.listpad {
+div.listpad, div.rt_pad {
     margin: 20px 80pt;
+}
+
+div.rt_pad {
+    width: 640px;
+    display: table;
 }
 
 div.fpholder {
@@ -189,6 +194,12 @@ div.ll {
     background: transparent url('/images/hdown.png') no-repeat 3px center;
 }
 
+.ph_rating {
+    background: transparent url('/images/star.png') no-repeat 3px center;
+    background-size: auto 70%;
+    cursor: default !important;
+}
+
 div.cityvote {
     padding: 0 5pt;
 }
@@ -242,4 +253,59 @@ div.pl_rating {
     color: #6c757d;
     font: 400 12pt 'Fira Sans Extra Condensed', sans-serif;
     background: transparent url('/images/star.png') no-repeat left top;
+}
+
+.prating {
+    background: transparent url('/images/dstar.png') no-repeat 3px center;
+    background-size: auto 70%;
+    cursor: default !important;
+}
+
+div.rtc {
+    width: 50%;
+    padding: 0 20pt;
+    vertical-align: top;
+    display: table-cell;
+}
+
+table.rating {
+    width: 320px;
+    border-collapse: collapse;
+}
+
+.rtc caption {
+    padding-left: 5pt;
+    padding-bottom: 3px;
+    text-align: left;
+    color: #6c757d;
+    font: 400 11pt 'Fira Sans Extra Condensed', sans-serif;
+}
+
+.rtc th {
+    padding: 2px 5pt 3px;
+    border: 1px solid #c0c0c0;
+    color: #333333;
+    font: 400 10pt 'Fira Sans Extra Condensed', sans-serif;
+    background-color: #cccccc;
+}
+
+.th_rating {
+    width: 10%;
+    background: transparent url("/images/star.png") no-repeat center center;
+    background-size: auto 50%;
+}
+
+.rtc tr:nth-child(odd) {
+    background-color: #dce5ed;
+}
+
+
+.rtc td {
+    padding: 4px 5pt 5px;
+    color: #6c757d;
+    font: 400 10pt 'Fira Sans Extra Condensed', sans-serif;
+}
+
+.td_rating {
+    text-align: center;
 }

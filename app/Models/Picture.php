@@ -18,4 +18,16 @@ class Picture extends Model
         return $this->morphMany(Rating::class, 'rateable');
     }
 
+    public function getLikes() {
+        return $this->ratings()->where('mark', true)->count();
+    }
+
+    public function getDisLikes() {
+        return $this->ratings()->where('mark', false)->count();
+    }
+
+    public function calcRating() {
+        return $this->getLikes() - $this->getDisLikes();
+    }
+
 }

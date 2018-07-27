@@ -28,4 +28,26 @@ class Place extends Model
         return $this->morphMany(Rating::class, 'rateable');
     }
 
+    public function getLikes()
+    {
+        return $this->ratings()->where('mark', true)->count();
+    }
+
+    public function getDisLikes()
+    {
+        return $this->ratings()->where('mark', false)->count();
+    }
+
+    public function calcRating()
+    {
+        $pictRating = 0;
+        $pictures = $this->pictures()->get();
+        foreach ($pictures as $picture) {
+            $pictRating += $picture->calcRating();
+        }
+
+        $placeRating = $this->getLikes() - $this->getDisLikes();
+        return $placeRating + $pictRating;
+    }
+
 }

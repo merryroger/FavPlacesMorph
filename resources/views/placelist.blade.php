@@ -7,7 +7,7 @@
             <div class="fpholder">
                 <div class="pldata"
                      onclick="document.location.href='{{ route('place.show', [urlencode($place->id)]) }}'; return false;">
-                    <div class="pl_rating" title="Рейтинг">{{ $place->ratings()->where('mark', 1)->count() - $place->ratings()->where('mark', 0)->count() }}</div>
+                    <div class="pl_rating" title="Рейтинг">{{ $place->calcRating() }}</div>
                     <div class="placename">{{ $place->name }}</div>
                     <div class="placetype">{{ $types[$place->placetype_id] }}</div>
                 </div>

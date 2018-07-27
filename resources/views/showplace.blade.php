@@ -9,10 +9,11 @@
                 <div class="photodata">{{ $item->created_at->format('d.m.Y H:i:s') }}</div>
                 <div class="photodata">
                     <div class="ll like" title="Нравится"
-                         onclick="document.location.href='{{ route('photo.like', [$item->id, 1]) }}'; return false;">{{ $item->ratings()->where('mark', true)->count() }}</div>
+                         onclick="document.location.href='{{ route('photo.like', [$item->id, 1]) }}'; return false;">{{ $item->getLikes() }}</div>
                     <div class="ll dislike"
                          title="Не нравится"
-                         onclick="document.location.href='{{ route('photo.like', [$item->id, 0]) }}'; return false;">{{ $item->ratings()->where('mark', false)->count() }}</div>
+                         onclick="document.location.href='{{ route('photo.like', [$item->id, 0]) }}'; return false;">{{ $item->getDisLikes() }}</div>
+                    <div class="ll ph_rating" title="Рейтинг">{{ $item->calcRating() }}</div>
                 </div>
             </div>
         @endforeach
