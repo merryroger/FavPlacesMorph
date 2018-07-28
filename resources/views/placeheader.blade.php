@@ -4,10 +4,10 @@
         @if(!$empty)
             <div class="cityvote">
                 <div class="pl plike" title="Место нравится"
-                     onclick="document.location.href='{{ route('place.like', [$placeid, 1]) }}'; return false;">{{ $place->getLikes() }}</div>
+                     onclick="markPlace('{{ route('place.like', [$placeid, 1]) }}')">{{ $place->getLikes() }}</div>
                 <div class="pl pdislike"
                      title="Место не нравится"
-                     onclick="document.location.href='{{ route('place.like', [$placeid, 0]) }}'; return false;">{{ $place->getDisLikes() }}</div>
+                     onclick="markPlace('{{ route('place.like', [$placeid, 0]) }}')">{{ $place->getDisLikes() }}</div>
                 <div class="pl prating" title="Рейтинг места">{{ $place->calcRating() }}</div>
             </div>
         @endif

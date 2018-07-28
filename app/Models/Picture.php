@@ -19,11 +19,11 @@ class Picture extends Model
     }
 
     public function getLikes() {
-        return $this->ratings()->where('mark', true)->count();
+        return $this->ratings()->likes(true)->count();
     }
 
     public function getDisLikes() {
-        return $this->ratings()->where('mark', false)->count();
+        return $this->ratings()->likes(false)->count();
     }
 
     public function calcRating() {

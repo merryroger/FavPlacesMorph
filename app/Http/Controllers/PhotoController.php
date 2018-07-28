@@ -14,7 +14,15 @@ class PhotoController extends Controller
         $picture->ratings()->create(['mark' => $mark == 1]);
         $place = Picture::find($id)->place;
 
-        return redirect()->route('place.show', [$place->id]);
+        $_response = [
+            'target' => 'photo',
+            'id' => $id,
+            'likes' => $picture->getLikes(),
+            'dislikes' => $picture->getDisLikes(),
+            'rating' => $picture->calcRating(),
+            'placerating' => $place->calcRating()];
+
+        return response()->json($_response, 200);
     }
 
 }

@@ -30,24 +30,20 @@ class Place extends Model
 
     public function getLikes()
     {
-        return $this->ratings()->where('mark', true)->count();
+        return $this->ratings()->likes(true)->count();
     }
 
     public function getDisLikes()
     {
-        return $this->ratings()->where('mark', false)->count();
+        return $this->ratings()->likes(false)->count();
     }
 
     public function calcRating()
     {
-        $pictRating = 0;
-        $pictures = $this->pictures()->get();
-        foreach ($pictures as $picture) {
-            $pictRating += $picture->calcRating();
-        }
-
+        $pictRatings = $this->pictures()->get()->map->calcRating()->sum();
         $placeRating = $this->getLikes() - $this->getDisLikes();
-        return $placeRating + $pictRating;
+
+        return $placeRating + $pictRatings;
     }
 
 }

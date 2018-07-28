@@ -87,7 +87,14 @@ class PlaceController extends Controller
         $place = Place::find($id);
         $place->ratings()->save(new Rating(['mark' => $mark == 1]));
 
-        return redirect()->route('place.show', [$id]);
+        $_response = [
+            'target' => 'place',
+            'id' => $id,
+            'likes' => $place->getLikes(),
+            'dislikes' => $place->getDisLikes(),
+            'placerating' => $place->calcRating()];
+
+        return response()->json($_response, 200);
     }
 
 }

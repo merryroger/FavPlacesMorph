@@ -13,4 +13,9 @@ class Rating extends Model
         return $this->morphTo();
     }
 
+    public function scopeLikes($query, $mark)
+    {
+        return $query->where('mark', $mark);
+    }
+
 }

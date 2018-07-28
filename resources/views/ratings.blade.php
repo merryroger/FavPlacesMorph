@@ -6,18 +6,30 @@
         <div class="rtc">
             <table class="rating">
                 <caption>Места</caption>
-                <tr><th class="th_rating"></th><th class="th_rateditem">Место</th></tr>
+                <tr>
+                    <th class="th_rating"></th>
+                    <th class="th_rateditem">Место</th>
+                </tr>
                 @foreach($rates as $lid => $rate)
-                    <tr><td class="td_rating">{{ $rate }}</td><td>{{ $listset[$lid]->name }}</td></tr>
+                    <tr class="rt_item_row" onclick="document.location.href = '{{ route('place.show', $listset[$lid]->id) }}'">
+                        <td class="td_rating">{{ $rate }}</td>
+                        <td><span>{{ $listset[$lid]->name }}</span></td>
+                    </tr>
                 @endforeach
             </table>
         </div>
         <div class="rtc">
             <table class="rating">
                 <caption>Фотографии</caption>
-                <tr><th class="th_rating"></th><th class="th_rateditem">Фотография</th></tr>
+                <tr>
+                    <th class="th_rating"></th>
+                    <th class="th_rateditem">Фотография</th>
+                </tr>
                 @foreach($ph_rates as $lid => $rate)
-                    <tr><td class="td_rating">{{ $rate }}</td><td>#{{ $photoset[$lid]->id }} @ {{ $photoset[$lid]->place->name }}</td></tr>
+                    <tr>
+                        <td class="td_rating">{{ $rate }}</td>
+                        <td>#{{ $photoset[$lid]->id }} @ {{ $photoset[$lid]->place->name }}</td>
+                    </tr>
                 @endforeach
             </table>
         </div>

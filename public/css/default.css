@@ -274,9 +274,9 @@ table.rating {
 }
 
 .rtc caption {
-    padding-left: 5pt;
-    padding-bottom: 3px;
-    text-align: left;
+    padding-right: 10pt;
+    padding-bottom: 5px;
+    text-align: right;
     color: #6c757d;
     font: 400 11pt 'Fira Sans Extra Condensed', sans-serif;
 }
@@ -295,17 +295,26 @@ table.rating {
     background-size: auto 50%;
 }
 
-.rtc tr:nth-child(odd) {
+tr.rt_item_row:nth-child(odd), .rtc tr:nth-child(odd) {
+    color: #6c757d;
     background-color: #dce5ed;
 }
 
+tr.rt_item_row:hover {
+    color: #f8f8f8;
+    background-color: #bcc5cd;
+    cursor: pointer;
+}
 
-.rtc td {
+.rt_item_row rd, .rtc td {
     padding: 4px 5pt 5px;
-    color: #6c757d;
     font: 400 10pt 'Fira Sans Extra Condensed', sans-serif;
 }
 
 .td_rating {
     text-align: center;
+}
+
+.rt_item_row span {
+    border-bottom: 1px dotted #bbbbbb;
 }
