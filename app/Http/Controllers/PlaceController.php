@@ -85,7 +85,7 @@ class PlaceController extends Controller
     public function likePlace($id, $mark)
     {
         $place = Place::find($id);
-        $place->ratings()->save(new Rating(['mark' => $mark == 1]));
+        $place->ratings()->create(['mark' => $mark == 1]);
 
         $_response = [
             'target' => 'place',
